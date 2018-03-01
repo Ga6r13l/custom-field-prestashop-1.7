@@ -107,7 +107,7 @@ class AmProductFields extends Module {
      */
     public function hookDisplayAdminProductsMainStepLeftColumnMiddle($params) {
         $product = new Product($params['id_product']);
-        $languages = Language::getLanguages($active);
+        $languages = Language::getLanguages(false);
         $this->context->smarty->assign(array(
             'custom_field' => $product->custom_field,
             'custom_field_lang' => $product->custom_field_lang,
